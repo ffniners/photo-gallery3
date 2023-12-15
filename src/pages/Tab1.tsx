@@ -54,10 +54,10 @@ const Tab1: React.FC = () => {
         cordova.plugin.http.get(url, {}, {}, 
           function(response: any) {
             console.log('Response received:', response);
-            const responseData = JSON.parse(response.data); // Parse the JSON response
+            const responseData = JSON.parse(response.data); 
             const filteredArticles = responseData.filter((article: Article) => article.acf && article.acf.lifespan);
             setArticles(filteredArticles);
-            //setArticles(responseData); // Assuming the response data is in the format you expect
+            //setArticles(responseData); 
             setIsLoading(false);
           },
           function(response: any) {
