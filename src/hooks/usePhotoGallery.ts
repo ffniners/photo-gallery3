@@ -56,7 +56,7 @@ export function usePhotoGallery() {
     const file = await Filesystem.readFile({
       path: photo.path!,
     });
-    base64Data = file.data;
+    base64Data = file.data.toString();
   } else {
     base64Data = await base64FromPath(photo.webPath!);
   }
